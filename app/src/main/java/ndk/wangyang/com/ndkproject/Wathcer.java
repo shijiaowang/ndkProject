@@ -10,5 +10,5 @@ public class Wathcer {
         System.loadLibrary("native-lib");
     }
 
-    public native void createWatcher(int userId);
+    public native void createWatcher(String userId);
 }

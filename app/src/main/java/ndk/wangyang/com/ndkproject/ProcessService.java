@@ -27,7 +27,7 @@ public class ProcessService extends Service {
     public void onCreate() {
         super.onCreate();
         Wathcer wathcer = new Wathcer();
-        wathcer.createWatcher(Process.myUid());
+        wathcer.createWatcher(Process.myUid()+"");
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

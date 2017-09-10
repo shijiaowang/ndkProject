@@ -3,14 +3,14 @@
 #include "unistd.h"
 #include "native-lib.h"
 
-int uid;
+const char* uid;
 
 void create_child();
 
 extern "C"
 JNIEXPORT void JNICALL Java_ndk_wangyang_com_ndkproject_Wathcer_createWatcher
-        (JNIEnv *env, jobject jobj, jint user_id) {
-    uid = user_id;
+        (JNIEnv *env, jobject jobj, jstring user_id) {
+    uid = env->GetStringUTFChars(user_id,NULL);
     //创建子进程
     create_child();
 
